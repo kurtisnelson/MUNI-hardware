@@ -32,6 +32,13 @@ oauth_expiry_field_name: ''
 oauth_expiry_strategy: ''
 oauth_fixed_expiry_ms: ''
 custom_fields:
+- keyname: doesnt_matter
+  name: About This Plugin
+  category: travel
+  field_type: author_bio
+  description: Created to maximize my dog's attention before I leave.
+  github_url: https://github.com/kurtisnelson
+  email_address: trmnl@kurt.contact
 - keyname: api_key
   field_type: string
   name: API Key
