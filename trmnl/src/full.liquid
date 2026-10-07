@@ -1,0 +1,34 @@
+<div class="layout layout--col gap--small">
+  {% if routes.size > 0 %}
+  <div class="grid">
+    <div class="col--span-2 text--left"><span class="label label--xsmall label--gray">Route</span></div>
+    <div class="col--span-6 text--left"><span class="label label--xsmall label--gray">Destination</span></div>
+    <div class="col--span-4 text--right"><span class="label label--xsmall label--gray">Next (minutes)</span></div>
+  </div>
+  <div class="divider"></div>
+
+  {% for r in routes %}
+  <div class="grid">
+    <div class="col--span-2 flex flex--col flex--left text--left">
+      <span class="value value--medium value--tnums">{{ r.route }}</span>
+      <span class="label label--xsmall label--gray">{{ r.direction }}</span>
+    </div>
+    <div class="col--span-6 flex flex--col flex--left text--left">
+      <span class="title title--medium" data-clamp="1">{{ r.destination }}</span>
+    </div>
+    <div class="col--span-4 flex flex--col flex--right text--right">
+      <span class="value value--medium value--tnums">{{ r.times_text }}</span>
+    </div>
+  </div>
+  {% unless forloop.last %}<div class="divider"></div>{% endunless %}
+  {% endfor %}
+  {% else %}
+  <span class="label">No upcoming departures.</span>
+  {% endif %}
+</div>
+
+<div class="title_bar">
+  <img class="image image--adaptive" src="https://trmnl.com/images/plugins/trmnl--render.svg">
+  <span class="title">Muni Departures</span>
+  <span class="instance">Updated {{ "now" | date: "%s" | plus: trmnl.user.utc_offset | date: "%-I:%M %p" }}</span>
+</div>
