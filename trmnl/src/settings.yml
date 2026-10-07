@@ -1,0 +1,47 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: 3.4.0
+serverless_language: node
+refresh_interval_floor: '5'
+polling_url: https://next-muni.cloud.run/?api_key={{ api_key }}&agency_id=SF&stops={{ stops }}
+polling_headers: ''
+polling_body: ''
+id: 498301
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
+oauth_authorize_url: ''
+oauth_token_url: ''
+oauth_scopes: ''
+oauth_scope_separator: ''
+oauth_refresh_url: ''
+oauth_auth_params: ''
+oauth_token_headers: ''
+oauth_token_site: ''
+oauth_token_params: ''
+oauth_token_request_auth_method: ''
+oauth_body_format: ''
+oauth_token_response_metadata: ''
+oauth_authorization_method: ''
+oauth_refresh_params: ''
+oauth_token_field_name: ''
+oauth_expiry_field_name: ''
+oauth_expiry_strategy: ''
+oauth_fixed_expiry_ms: ''
+custom_fields:
+- keyname: api_key
+  field_type: string
+  name: API Key
+  description: 511.org API key
+  placeholder: 1234-5678
+- keyname: stops
+  field_type: multi_string
+  name: Stop ID(s)
+  description: List of SFMTA stop IDs to combine
+  placeholder: 123
+name: MUNI Departure Board
+description: Upcoming MUNI departures
+refresh_interval: 15
